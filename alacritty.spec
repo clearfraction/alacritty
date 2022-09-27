@@ -43,6 +43,7 @@ install -m644 %{SOURCE4} -pD %{buildroot}/usr/share/bash-completion/completions/
 install -m644 %{SOURCE5} -pD %{buildroot}/usr/share/zsh/site-functions/_alacritty
 
 %files
+%defattr(-,root,root,-)
 %license LICENSE-APACHE
 /usr/bin/alacritty
 /usr/share/applications/Alacritty.desktop
