@@ -1,5 +1,5 @@
 Name:           alacritty
-Version:        0.10.1
+Version:        0.11.0
 Release:        1
 URL:            https://github.com/alacritty
 Source0:        https://github.com/alacritty/alacritty/archive/refs/tags/v%{version}.tar.gz
@@ -27,11 +27,12 @@ rendering.
 
 %prep
 %setup -q -n alacritty-%{version}
-cargo fetch --locked
+sed -i 's/checksum = "21d83ec9c63ec5bf950200a8e508bdad6659972187b625469f58ef8c08e29046"//' Cargo.lock
 
 %build
+unset http_proxy https_proxy no_proxy
 export RUSTFLAGS="$RUSTFLAGS -C target-cpu=westmere -C target-feature=+avx -C opt-level=3"
-env CARGO_INCREMENTAL=0 cargo build --release --locked --offline
+cargo build --release
 
 
 %install
