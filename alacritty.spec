@@ -2,7 +2,8 @@ Name:           alacritty
 Version:        0.12.1
 Release:        1
 URL:            https://github.com/alacritty
-Source0:        https://github.com/alacritty/alacritty/archive/refs/tags/v%{version}.tar.gz
+#Source0:        https://github.com/alacritty/alacritty/archive/refs/tags/v%%{version}.tar.gz
+Source0:        https://github.com/chrhasse/alacritty-sixel/archive/refs/heads/master.tar.gz
 Source1:        https://github.com/alacritty/alacritty/releases/download/v%{version}/Alacritty.desktop
 Source2:        https://github.com/alacritty/alacritty/releases/download/v%{version}/Alacritty.svg
 Source3:        https://github.com/alacritty/alacritty/releases/download/v%{version}/alacritty.fish
@@ -26,7 +27,7 @@ Alacritty is a terminal emulator written in Rust that leverages the GPU for
 rendering.
 
 %prep
-%setup -q -n alacritty-%{version}
+%setup -q -n alacritty-sixel-master
 sed -i 's/checksum = "21d83ec9c63ec5bf950200a8e508bdad6659972187b625469f58ef8c08e29046"//' Cargo.lock
 
 %build
