@@ -32,7 +32,7 @@ sed -i 's/checksum = "21d83ec9c63ec5bf950200a8e508bdad6659972187b625469f58ef8c08
 
 %build
 unset http_proxy https_proxy no_proxy
-export RUSTFLAGS="$RUSTFLAGS -C target-cpu=westmere -C target-feature=+avx -C opt-level=3 -C codegen-units=1 -C panic=abort -Clink-arg=-Wl,-z,now,-z,relro,-z,max-page-size=0x4000,-z,separate-code"
+export RUSTFLAGS="$RUSTFLAGS -C target-cpu=westmere -C target-feature=+avx -C opt-level=3 -C codegen-units=1 -C panic=abort -Clink-arg=-Wl,-z,now,-z,relro,-z,max-page-size=0x4000,-z,separate-code "
 cargo build --release
 
 
