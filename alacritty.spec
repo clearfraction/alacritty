@@ -43,6 +43,7 @@ install -m644 %{SOURCE2} -pD %{buildroot}/usr/share/pixmaps/Alacritty.svg
 install -m644 %{SOURCE3} -pD %{buildroot}/usr/share/fish/vendor_completions.d/alacritty.fish
 install -m644 %{SOURCE4} -pD %{buildroot}/usr/share/bash-completion/completions/alacritty
 install -m644 %{SOURCE5} -pD %{buildroot}/usr/share/zsh/site-functions/_alacritty
+strip --strip-debug %{buildroot}/usr/bin/alacritty
 
 %files
 %defattr(-,root,root,-)
