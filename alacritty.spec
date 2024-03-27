@@ -1,5 +1,5 @@
 Name:           alacritty
-Version:        0.12.1
+Version:        0.13.2
 Release:        1
 URL:            https://github.com/alacritty
 #Source0:        https://github.com/alacritty/alacritty/archive/refs/tags/v%%{version}.tar.gz
